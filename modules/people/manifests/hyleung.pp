@@ -11,6 +11,8 @@ class people::hyleung {
         'wget':
             provider => 'homebrew';
         'gradle':
+            provider => 'homebrew';    
+        'maven':
             provider => 'homebrew';            
     }
     file {
