@@ -6,6 +6,10 @@ class people::hyleung {
         'android-ndk':
             provider => 'homebrew',
             ensure => 'r8d';
+        'jq':
+            provider => 'homebrew';
+        'wget':
+            provider => 'homebrew';
     }
 
 }
