@@ -11,5 +11,11 @@ class people::hyleung {
         'wget':
             provider => 'homebrew';
     }
-
+    file {
+        "/etc/hosts":
+            ensure => present,
+            source => "puppet:///modules/people/hyleung/hosts",
+            owner => root,
+            group => wheel;
+    }
 }
