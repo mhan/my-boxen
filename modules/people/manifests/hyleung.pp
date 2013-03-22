@@ -10,6 +10,8 @@ class people::hyleung {
             provider => 'homebrew';
         'wget':
             provider => 'homebrew';
+        'gradle':
+            provider => 'homebrew';            
     }
     file {
         "/etc/hosts":
