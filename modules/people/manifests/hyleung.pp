@@ -17,6 +17,9 @@ class people::hyleung {
             source => "puppet:///modules/people/hyleung/hosts",
             owner => root,
             group => wheel;
+        "/Users/hyleung/.bash_profile":
+            ensure => present,
+            source => "puppet:///modules/people/hyleung/my.bash_profile",
     }
     file {
         "/usr/local/bin/git":
