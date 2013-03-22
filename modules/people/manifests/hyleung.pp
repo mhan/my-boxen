@@ -18,4 +18,10 @@ class people::hyleung {
             owner => root,
             group => wheel;
     }
+    file {
+        "/usr/local/bin/git":
+            ensure => link,
+            target => "/opt/boxen/homebrew/bin/git",
+            require => Class["git"];
+    }
 }
