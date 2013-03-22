@@ -1,0 +1,28 @@
+[user]
+	name = H.Y. Leung
+	email = hy.leung@gmail.com
+[core]
+	excludesfile = /opt/boxen/config/git/gitignore
+	editor = subl -w
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+	
+[alias]
+  	stage = add
+	unstage = reset HEAD
+	co = checkout
+	plog = log --pretty=oneline --abbrev-commit --graph --all --decorate
+[color]	
+	ui = auto
+
+[hub]
+protocol = https
+
+[credential]
+helper = /opt/boxen/bin/boxen-git-credential
+[push]
+	default = upstream

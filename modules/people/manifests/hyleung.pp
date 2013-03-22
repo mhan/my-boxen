@@ -28,5 +28,9 @@ class people::hyleung {
             ensure => link,
             target => "/opt/boxen/homebrew/bin/git",
             require => Class["git"];
+        "/Users/hyleung/.gitconfig":
+            ensure => present,
+            source => "puppet:///modules/people/hyleung/my.gitconfig",
+            require => Class["git"];
     }
 }
