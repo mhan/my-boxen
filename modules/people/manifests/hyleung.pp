@@ -14,6 +14,8 @@ class people::hyleung {
             provider => 'homebrew';    
         'maven':
             provider => 'homebrew';            
+        'gibo':
+            provider => 'homebrew';    
     }
     file {
         "/etc/hosts":
