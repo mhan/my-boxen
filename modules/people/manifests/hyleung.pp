@@ -15,7 +15,9 @@ class people::hyleung {
         'maven':
             provider => 'homebrew';            
         'gibo':
-            provider => 'homebrew';    
+            provider => 'homebrew';
+        heroku-toolbelt:
+            provider => 'homebrew';            
     }
     file {
         "/etc/hosts":
