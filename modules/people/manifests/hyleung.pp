@@ -18,6 +18,22 @@ class people::hyleung {
             provider => 'homebrew';
         heroku-toolbelt:
             provider => 'homebrew';            
+        "facter-1.6.18":
+            ensure => installed,
+            provider => 'pkgdmg',
+            source => "http://downloads.puppetlabs.com/mac/facter-1.6.18.dmg";
+        "puppet-3.1.1":
+            ensure => installed,
+            provider => 'pkgdmg',
+            source => "http://downloads.puppetlabs.com/mac/puppet-3.1.1.dmg";
+        "hiera-1.2.0-rc2":
+            ensure => installed,
+            provider => 'pkgdmg',
+            source => "http://downloads.puppetlabs.com/mac/hiera-1.2.0-rc2.dmg";      
+        "vagrant-1.1.2":
+            ensure => installed,
+            provider => 'pkgdmg',
+            source => "http://files.vagrantup.com/packages/67bd4d30f7dbefa7c0abc643599f0244986c38c8/Vagrant.dmg";      
     }
     file {
         "/etc/hosts":
