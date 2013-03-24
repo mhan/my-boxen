@@ -47,12 +47,13 @@ class people::hyleung {
             provider => 'pkgdmg',
             source => "http://download.jetbrains.com/idea/ideaIC-12.0.4.dmg";                 
     }
-    file {
-        "/etc/hosts":
+    host {
+        "fsvan.foresee.com":
+            ip => "204.244.61.21",
             ensure => present,
-            source => "puppet:///modules/people/hyleung/hosts",
-            owner => root,
-            group => wheel;
+            comment => "ForeSee Vancouver external IP";
+    }
+    file {
         "/Users/hyleung/.bash_profile":
             ensure => present,
             source => "puppet:///modules/people/hyleung/my.bash_profile",
