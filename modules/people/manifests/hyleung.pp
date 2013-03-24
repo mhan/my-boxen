@@ -33,7 +33,11 @@ class people::hyleung {
         "vagrant-1.1.2":
             ensure => installed,
             provider => 'pkgdmg',
-            source => "http://files.vagrantup.com/packages/67bd4d30f7dbefa7c0abc643599f0244986c38c8/Vagrant.dmg";      
+            source => "http://files.vagrantup.com/packages/67bd4d30f7dbefa7c0abc643599f0244986c38c8/Vagrant.dmg";
+        "sublime-text-2":
+            ensure => installed,
+            provider => 'pkgdmg',
+            source => "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1.dmg";      
     }
     file {
         "/etc/hosts":
