@@ -17,6 +17,10 @@ class people::hyleung {
         'gibo':
             provider => 'homebrew';
         heroku-toolbelt:
+            provider => 'homebrew';  
+        scala:
+            provider => 'homebrew';  
+        sbt:
             provider => 'homebrew';            
         "facter-1.6.18":
             ensure => installed,
