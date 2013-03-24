@@ -37,7 +37,11 @@ class people::hyleung {
         "sublime-text-2":
             ensure => installed,
             provider => 'pkgdmg',
-            source => "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1.dmg";      
+            source => "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1.dmg";
+        "intellij-12":
+            ensure => installed,
+            provider => 'pkgdmg',
+            source => "http://download.jetbrains.com/idea/ideaIC-12.0.4.dmg";                 
     }
     file {
         "/etc/hosts":
