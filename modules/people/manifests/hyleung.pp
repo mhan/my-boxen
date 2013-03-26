@@ -1,5 +1,6 @@
 class people::hyleung {
-    include  vagrant
+    include java
+    include vagrant
     include sublime_text_2
     vagrant::plugin {
         'vagrant-vmware-fusion':
