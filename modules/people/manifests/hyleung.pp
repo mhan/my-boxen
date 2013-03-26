@@ -1,6 +1,6 @@
 class people::hyleung {
     include  vagrant
-
+    include sublime_text_2
     vagrant::plugin {
         'vagrant-vmware-fusion':
             license => "puppet:///modules/people/hyleung/license.lic";
