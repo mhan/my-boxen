@@ -30,6 +30,7 @@ github "nvm",      "1.0.0"
 github "ruby",     "3.1.0"
 github "stdlib",   "3.0.0", :repo => "puppetlabs/puppetlabs-stdlib"
 github "sudo",     "1.0.0"
-
+github "vagrant",   "2.0.2"
+github "intellij",   "1.1.2"
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.

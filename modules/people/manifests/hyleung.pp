@@ -1,4 +1,13 @@
 class people::hyleung {
+    include  vagrant
+
+    vagrant::plugin {
+        'vagrant-vmware-fusion':
+            license => "puppet:///modules/people/hyleung/license.lic";
+    }
+    class { 'intellij':
+            edition => 'community';
+    }
     package {
         'android-sdk':
             provider => 'homebrew',
@@ -21,7 +30,9 @@ class people::hyleung {
         scala:
             provider => 'homebrew';  
         sbt:
-            provider => 'homebrew';            
+            provider => 'homebrew';  
+        augeas:
+            provider => 'homebrew';                        
         "facter-1.6.18":
             ensure => installed,
             provider => 'pkgdmg',
@@ -33,19 +44,7 @@ class people::hyleung {
         "hiera-1.2.0-rc2":
             ensure => installed,
             provider => 'pkgdmg',
-            source => "http://downloads.puppetlabs.com/mac/hiera-1.2.0-rc2.dmg";      
-        "vagrant-1.1.2":
-            ensure => installed,
-            provider => 'pkgdmg',
-            source => "http://files.vagrantup.com/packages/67bd4d30f7dbefa7c0abc643599f0244986c38c8/Vagrant.dmg";
-        "sublime-text-2":
-            ensure => installed,
-            provider => 'pkgdmg',
-            source => "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1.dmg";
-        "intellij-12":
-            ensure => installed,
-            provider => 'pkgdmg',
-            source => "http://download.jetbrains.com/idea/ideaIC-12.0.4.dmg";                 
+            source => "http://downloads.puppetlabs.com/mac/hiera-1.2.0-rc2.dmg";                              
     }
     host {
         "fsvan.foresee.com":
