@@ -34,5 +34,6 @@ github "vagrant",   "2.0.2"
 github "intellij",   "1.1.2"
 github "sublime_text_2", "1.1.0"
 github "java",   "1.0.6"
+github "vcsrepo",   "0.1.1", :repo => "puppetlabs/puppetlabs-vcsrepo"
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.

@@ -83,6 +83,11 @@ GITHUBTARBALL
   specs:
     stdlib (3.0.0)
 
+GITHUBTARBALL
+  remote: puppetlabs/puppetlabs-vcsrepo
+  specs:
+    vcsrepo (0.1.1)
+
 DEPENDENCIES
   boxen (= 1.2.0)
   dnsmasq (= 1.0.0)
@@ -101,4 +106,5 @@ DEPENDENCIES
   sublime_text_2 (= 1.1.0)
   sudo (= 1.0.0)
   vagrant (= 2.0.2)
+  vcsrepo (= 0.1.1)
 
