@@ -47,6 +47,10 @@ class people::hyleung {
             provider => 'pkgdmg',
             source => "http://downloads.puppetlabs.com/mac/hiera-1.2.0-rc2.dmg";                              
     }
+    package { "puppet-lint":
+        ensure => installed,
+        provider=>"gem";
+    }
     host {
         "fsvan.foresee.com":
             ip => "204.244.61.21",
