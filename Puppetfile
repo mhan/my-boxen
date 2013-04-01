@@ -35,5 +35,6 @@ github "intellij",   "1.1.2"
 github "sublime_text_2", "1.1.0"
 github "java",   "1.0.6"
 github "vcsrepo",   "0.1.1", :repo => "puppetlabs/puppetlabs-vcsrepo"
+github "chrome",    "1.1.0"
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
