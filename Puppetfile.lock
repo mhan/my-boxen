@@ -76,7 +76,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-vagrant
   specs:
-    vagrant (2.0.2)
+    vagrant (2.0.3)
 
 GITHUBTARBALL
   remote: cprice-puppet/puppetlabs-inifile
@@ -111,6 +111,6 @@ DEPENDENCIES
   stdlib (= 3.0.0)
   sublime_text_2 (= 1.1.0)
   sudo (= 1.0.0)
-  vagrant (= 2.0.2)
+  vagrant (= 2.0.3)
   vcsrepo (= 0.1.1)
 
