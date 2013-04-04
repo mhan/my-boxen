@@ -52,6 +52,10 @@ class people::hyleung {
         ensure => installed,
         provider=>"gem";
     }
+    package { "librarian-puppet":
+        ensure => installed,
+        provider=>"gem";
+    }    
     host {
         "fsvan.foresee.com":
             ip => "204.244.61.21",
