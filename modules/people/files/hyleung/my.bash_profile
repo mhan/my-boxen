@@ -24,3 +24,5 @@ export PATH=$PATH:~/bin
 source ~/.git-completion.bash
 
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+
+export PATH=$PATH:/opt/boxen/repo/bin
