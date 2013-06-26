@@ -35,6 +35,8 @@ class people::hyleung {
             provider => 'homebrew';  
         augeas:
             provider => 'homebrew';                                                    
+        tig:
+            provider => 'homebrew';
     }
     package { "puppet-lint":
         ensure => installed,

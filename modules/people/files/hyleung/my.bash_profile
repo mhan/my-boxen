@@ -22,7 +22,7 @@ export ANDROID_NDK_HOME=/opt/boxen/homebrew/Cellar/android-ndk/r8d/
 export PATH=$PATH:~/bin
 
 source ~/.git-completion.bash
-
+export EDITOR=/usr/bin/vim
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
 export PATH=$PATH:/opt/boxen/repo/bin

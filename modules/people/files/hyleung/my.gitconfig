@@ -3,7 +3,7 @@
 	email = hy.leung@gmail.com
 [core]
 	excludesfile = /opt/boxen/config/git/gitignore
-	editor = subl -w
+	editor = vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
