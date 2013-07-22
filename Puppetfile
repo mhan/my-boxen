@@ -30,11 +30,13 @@ github "nvm",      "1.0.0"
 github "ruby",     "3.1.0"
 github "stdlib",   "3.0.0", :repo => "puppetlabs/puppetlabs-stdlib"
 github "sudo",     "1.0.0"
-github "vagrant",   "2.0.3"
-github "intellij",   "1.1.2"
-github "sublime_text_2", "1.1.0"
+github "vagrant",   "2.0.9"
+github "intellij",   "1.3.0"
+github "sublime_text_2", "1.1.2"
 github "java",   "1.0.6"
 github "vcsrepo",   "0.1.1", :repo => "puppetlabs/puppetlabs-vcsrepo"
-github "chrome",    "1.1.0"
+github "chrome",    "1.1.1"
+github "colloquy",	"1.0.0"
+
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.

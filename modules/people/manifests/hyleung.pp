@@ -3,6 +3,7 @@ class people::hyleung {
     include vagrant
     include sublime_text_2
     include chrome
+    include colloquy
     vagrant::plugin {
         'vagrant-vmware-fusion':
             license => "puppet:///modules/people/hyleung/license.lic";
@@ -16,7 +17,7 @@ class people::hyleung {
             ensure => 'r22.0.1';
         'android-ndk':
             provider => 'homebrew',
-            ensure => 'r8d';
+            ensure => 'r8e';
         'jq':
             provider => 'homebrew';
         'wget':
@@ -35,8 +36,6 @@ class people::hyleung {
             provider => 'homebrew';  
         augeas:
             provider => 'homebrew';                                                    
-        tig:
-            provider => 'homebrew';
     }
     package { "puppet-lint":
         ensure => installed,
@@ -58,10 +57,14 @@ class people::hyleung {
             source => "puppet:///modules/people/hyleung/my.bash_profile",
     }
     file {
+	"/usr/local":
+		ensure => directory;
+	"/usr/local/bin":
+		ensure => directory;
         "/usr/local/bin/git":
             ensure => link,
             target => "/opt/boxen/homebrew/bin/git",
-            require => Class["git"];
+            require => [Class["git"]];
         "/Users/hyleung/.gitconfig":
             ensure => present,
             source => "puppet:///modules/people/hyleung/my.gitconfig",
