@@ -37,6 +37,8 @@ github "java",   "1.0.6"
 github "vcsrepo",   "0.1.1", :repo => "puppetlabs/puppetlabs-vcsrepo"
 github "chrome",    "1.1.1"
 github "colloquy",	"1.0.0"
-
+github "iterm2", "1.0.2"
+github "macvim", "1.0.0"
+github "android", "1.0.0"
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.

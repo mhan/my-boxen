@@ -4,6 +4,10 @@ class people::hyleung {
     include sublime_text_2
     include chrome
     include colloquy
+    include macvim
+    include android::sdk
+    include android::ndk
+    include iterm2::stable
     vagrant::plugin {
         'vagrant-vmware-fusion':
             license => "puppet:///modules/people/hyleung/license.lic";
@@ -12,12 +16,6 @@ class people::hyleung {
             edition => 'community';
     }
     package {
-        'android-sdk':
-            provider => 'homebrew',
-            ensure => 'r22.0.1';
-        'android-ndk':
-            provider => 'homebrew',
-            ensure => 'r8e';
         'jq':
             provider => 'homebrew';
         'wget':
