@@ -40,5 +40,7 @@ github "colloquy",	"1.0.0"
 github "iterm2", "1.0.2"
 github "macvim", "1.0.0"
 github "android", "1.0.0"
+github "repository", "2.2.0"
+github "virtualbox", "1.0.4"
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.

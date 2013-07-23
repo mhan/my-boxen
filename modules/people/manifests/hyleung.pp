@@ -8,10 +8,17 @@ class people::hyleung {
     include android::sdk
     include android::ndk
     include iterm2::stable
+    include virtualbox
+
     vagrant::plugin {
         'vagrant-vmware-fusion':
             license => "puppet:///modules/people/hyleung/license.lic";
     }
+    vagrant::box {
+	'precise64/virtualbox':
+		source => "http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-server-12042-x64-vbox4210.box"
+    }
+
     class { 'intellij':
             edition => 'community';
     }
