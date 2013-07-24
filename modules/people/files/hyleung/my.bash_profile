@@ -16,8 +16,8 @@ function parse_git_branch {
 }
 export PS1='\u@\h \[\033[1;33m\]\w\[\033[0m\]$(parse_git_branch)$ '
 
-export ANDROID_HOME=/opt/boxen/homebrew/Cellar/android-sdk/r22.0.1/
-export ANDROID_NDK_HOME=/opt/boxen/homebrew/Cellar/android-ndk/r8d/
+#export ANDROID_HOME=/opt/boxen/homebrew/Cellar/android-sdk/r21.1-boxen2
+export ANDROID_NDK_HOME=/opt/boxen/homebrew/Cellar/android-ndk/r8e-boxen1
 
 export PATH=$PATH:~/bin
 

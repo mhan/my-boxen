@@ -9,7 +9,7 @@ class people::hyleung {
     include android::ndk
     include iterm2::stable
     include virtualbox
-
+    include divvy
     vagrant::plugin {
         'vagrant-vmware-fusion':
             license => "puppet:///modules/people/hyleung/license.lic";
@@ -30,6 +30,7 @@ class people::hyleung {
         'gradle':
             provider => 'homebrew';    
         'maven':
+	    ensure => "3.0.5",
             provider => 'homebrew';            
         'gibo':
             provider => 'homebrew';
@@ -40,17 +41,14 @@ class people::hyleung {
         sbt:
             provider => 'homebrew';  
         augeas:
-            provider => 'homebrew';                                                    
+            provider => 'homebrew';                                                    "thrift":
+	    provider => "homebrew";
     }
     package { "puppet-lint":
         ensure => installed,
         provider=>"gem";
     }
-    package { "librarian-puppet":
-        ensure => installed,
-        provider=>"gem";
-    }    
-    host {
+   host {
         "fsvan.foresee.com":
             ip => "204.244.61.21",
             ensure => present,
