@@ -60,6 +60,12 @@ class people::hyleung {
             source => "puppet:///modules/people/hyleung/my.bash_profile",
     }
     file {
+	"/Users/hyleung/.git-completion.bash":
+		ensure => present,
+		source => "puppet:///modules/people/hyleung/my.git-completion.bash",
+    }
+
+    file {
 	"/usr/local":
 		ensure => directory;
 	"/usr/local/bin":
