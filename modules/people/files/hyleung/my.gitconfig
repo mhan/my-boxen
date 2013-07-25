@@ -1,6 +1,6 @@
 [user]
-	name = H.Y. Leung
-	email = hy.leung@gmail.com
+	name = Ho Yan Leung
+	email = hoyan.leung@foresee.com
 [core]
 	excludesfile = /opt/boxen/config/git/gitignore
 	editor = vim
