@@ -1,0 +1,14 @@
+[user]
+	name = Michael Han
+	email = han.michael@gmail.com
+[core]
+	editor = mvim -f
+[color]
+	ui = true
+	branch = auto
+[alias]
+	lawg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	unstage = reset HEAD
+	rollback = checkout
+[credential]
+	helper = osxkeychain

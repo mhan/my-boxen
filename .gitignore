@@ -9,3 +9,5 @@
 /shared/*
 !/shared/README.md
 /vendor/gems/
+.DS_Store
+*.swp
