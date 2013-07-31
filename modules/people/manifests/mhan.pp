@@ -13,6 +13,7 @@ class people::mhan {
     include skitch
     include flux
     include rdio
+    include keyremap4macbook
     include keyremap4macbook::login_item
 
     keyremap4macbook::remap{ 'capslock2escape': }
@@ -28,13 +29,20 @@ class people::mhan {
             require => [Exec['git clone pathogen'], File['/Users/mhan/.vim/autoload']];
     }
     file {
-        '/Users/mhan/.vim/autoload':
+        '/Users/mhan/.vim':
             ensure => directory;
+        '/Users/mhan/.vim/autoload':
+            ensure => directory,
+            require => File['/Users/mhan/.vim'];
     }
 
     file {
-        '/Users/mhan/development/github':
+        '/Users/mhan/development':
             ensure => directory;
+
+        '/Users/mhan/development/github':
+            ensure => directory,
+            require => File['/Users/mhan/development'];
     }
 
     file {
@@ -52,7 +60,8 @@ class people::mhan {
 
     file {
         '/Users/mhan/.vim/bundle':
-            ensure => directory;
+            ensure => directory,
+            require => File['/Users/mhan/.vim'];
     }
 
     vagrant::box {
@@ -107,18 +116,18 @@ class people::mhan {
         '/Users/mhan/bin':
             ensure => directory;
 
-        'Users/mhan/bin/mvim':
+        '/Users/mhan/bin/mvim':
             ensure => present,
             require => File['/Users/mhan/bin'],
             source => 'puppet:///modules/people/mhan/my.mvim';
 
         '/Users/mhan/.git-completion.bash':
             ensure => present,
-            source => 'puppet:///modules/people/mhan/my.git-completion.bash',
+            source => 'puppet:///modules/people/mhan/my.git-completion.bash';
         
         '/Users/mhan/.git-prompt.sh':
             ensure => present,
-            source => 'puppet:///modules/people/mhan/my.git-prompt.sh',
+            source => 'puppet:///modules/people/mhan/my.git-prompt.sh';
         
         '/Users/mhan/.gitconfig':
             ensure => present,

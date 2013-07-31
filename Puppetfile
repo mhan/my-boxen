@@ -50,5 +50,6 @@ github "dropbox", "1.1.0"
 github "skitch", "1.0.1"
 github "flux", "1.0.0"
 github "rdio", "1.0.0"
+github "osx", "1.5.0"
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
