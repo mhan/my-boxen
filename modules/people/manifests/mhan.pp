@@ -74,15 +74,6 @@ class people::mhan {
     }
     
     package {
-        'cocoapods':
-            ensure => installed,
-            provider=> 'gem';
-        'rubyzip':
-            ensure => installed,
-            provider=> 'gem';
-    }
-
-    package {
         'jq':
             provider => 'homebrew';
         'wget':
@@ -93,14 +84,7 @@ class people::mhan {
             provider => 'homebrew';
     }
 
-    package {
-        'puppet-lint':
-            ensure => installed,
-            provider=>'gem';
-    }
-
-    host {
-        'fsvan.foresee.com':
+    host { 'fsvan.foresee.com':
             ip => '204.244.61.21',
             ensure => present,
             comment => 'ForeSee Vancouver external IP';
@@ -112,14 +96,6 @@ class people::mhan {
     }
 
     file {
-        '/Users/mhan/bin':
-            ensure => directory;
-
-        '/Users/mhan/bin/mvim':
-            ensure => present,
-            require => File['/Users/mhan/bin'],
-            source => 'puppet:///modules/people/mhan/my.mvim';
-
         '/Users/mhan/.git-completion.bash':
             ensure => present,
             source => 'puppet:///modules/people/mhan/my.git-completion.bash';
