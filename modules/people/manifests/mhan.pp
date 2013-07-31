@@ -13,7 +13,10 @@ class people::mhan {
     include skitch
     include flux
     include rdio
+    include keyremap4macbook
+    include keyremap4macbook::login_item
 
+    keyremap4macbook::remap{ 'command_r2escape': }
     exec {
         'git clone pathogen':
             unless => 'test -d /Users/mhan/development/github/vim-pathogen',
