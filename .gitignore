@@ -11,3 +11,4 @@
 /vendor/gems/
 .DS_Store
 *.swp
+vendor/puppet
