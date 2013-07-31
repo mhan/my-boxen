@@ -19,12 +19,12 @@ class people::mhan {
 
     exec {
         'git clone pathogen':
-            unless => 'test -d /Users/mhan/development/github/vim-pathogen'
-            command => 'git clone https://github.com/tpope/vim-pathogen.git /Users/mhan/development/github/vim-pathogen'
+            unless => 'test -d /Users/mhan/development/github/vim-pathogen',
+            command => 'git clone https://github.com/tpope/vim-pathogen.git /Users/mhan/development/github/vim-pathogen',
             require => File['/Users/mhan/development/github'];
 
         'cp /Users/mhan/development/github/vim-pathogen/autoload/pathogen.vim /Users/mhan/.vim/autoload/pathogen.vim':
-            unless => 'test -f /Users/mhan/.vim/autoload/pathogen.vim'
+            unless => 'test -f /Users/mhan/.vim/autoload/pathogen.vim',
             require => [Exec['git clone pathogen'], File['/Users/mhan/.vim/autoload']];
     }
     file {
@@ -45,8 +45,8 @@ class people::mhan {
 
     exec {
         'git clone vim-colors-solarized':
-            unless => 'test -d /Users/mhan/.vim/bundle/vim-colors-solarized'
-            command => 'git clone https://github.com/altercation/vim-colors-solarized.git /Users/mhan/.vim/bundle/vim-colors-solarized'
+            unless => 'test -d /Users/mhan/.vim/bundle/vim-colors-solarized',
+            command => 'git clone https://github.com/altercation/vim-colors-solarized.git /Users/mhan/.vim/bundle/vim-colors-solarized',
             require => File['/Users/mhan/.vim/bundle'];
     }
 
