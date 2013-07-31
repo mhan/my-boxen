@@ -25,7 +25,7 @@ class people::mhan {
 
         'cp /Users/mhan/development/github/vim-pathogen/autoload/pathogen.vim /Users/mhan/.vim/autoload/pathogen.vim':
             unless => 'test -f /Users/mhan/.vim/autoload/pathogen.vim'
-            require => File['/Users/mhan/.vim/autoload'];
+            require => [Exec['git clone pathogen'], File['/Users/mhan/.vim/autoload']];
     }
     file {
         '/Users/mhan/.vim/autoload':
@@ -38,7 +38,7 @@ class people::mhan {
     }
 
     file {
-        '.vimrc':
+        '/Users/mhan/.vimrc':
             ensure => present,
             source => 'puppet:///modules/people/mhan/my.vimrc';
     }
@@ -47,11 +47,11 @@ class people::mhan {
         'git clone vim-colors-solarized':
             unless => 'test -d /Users/mhan/.vim/bundle/vim-colors-solarized'
             command => 'git clone https://github.com/altercation/vim-colors-solarized.git /Users/mhan/.vim/bundle/vim-colors-solarized'
-            require => File['.vim/bundle'];
+            require => File['/Users/mhan/.vim/bundle'];
     }
 
     file {
-        '.vim/bundle':
+        '/Users/mhan/.vim/bundle':
             ensure => directory;
     }
 
@@ -109,6 +109,7 @@ class people::mhan {
 
         'Users/mhan/bin/mvim':
             ensure => present,
+            require => File['/Users/mhan/bin'],
             source => 'puppet:///modules/people/mhan/my.mvim';
 
         '/Users/mhan/.git-completion.bash':
