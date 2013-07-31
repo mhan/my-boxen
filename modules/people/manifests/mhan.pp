@@ -104,6 +104,13 @@ class people::mhan {
     }
 
     file {
+        '/Users/mhan/bin':
+            ensure => directory;
+
+        'Users/mhan/bin/mvim':
+            ensure => present,
+            source => 'puppet:///modules/people/mhan/my.mvim';
+
         '/Users/mhan/.git-completion.bash':
             ensure => present,
             source => 'puppet:///modules/people/mhan/my.git-completion.bash',
