@@ -25,6 +25,4 @@ export PS1
 
 alias gitk gitk 2>/dev/null
 
-PATH=~/bin:$PATH
-
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
