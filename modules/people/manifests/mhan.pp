@@ -1,4 +1,13 @@
+
 class people::mhan {
+    class { 'ruby::global':
+        version => '1.9.3-p448'
+    }
+
+    class { 'nodejs::global':
+        version => 'v0.10.13'
+    }
+
     include java
     include vagrant
     include sublime_text_2
