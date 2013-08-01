@@ -1,7 +1,8 @@
-
 class people::mhan {
+    $ruby_version = '1.9.3-p448'
+
     class { 'ruby::global':
-        version => '1.9.3-p448'
+        version => "${ruby_version}"
     }
 
     class { 'nodejs::global':
@@ -22,10 +23,7 @@ class people::mhan {
     include skitch
     include flux
     include rdio
-    include keyremap4macbook
-    include keyremap4macbook::login_item
 
-    keyremap4macbook::remap{ 'command_r2escape': }
     exec {
         'git clone pathogen':
             unless => 'test -d /Users/mhan/development/github/vim-pathogen',
@@ -82,6 +80,37 @@ class people::mhan {
             edition => 'community';
     }
     
+    ruby::gem { "cocoapods for ${ruby_version}":
+        gem => 'cocoapods',
+        ruby => $ruby_version,
+    }
+
+    ruby::gem { "rubyzip for ${ruby_version}":
+        gem => 'rubyzip',
+        ruby => $ruby_version,
+    }
+
+    git::config::global {
+        'user.name':
+            value => 'Michael Han';
+        'user.email':
+            value => 'han.michael@gmail.com';
+        'color.ui':
+            value => 'true';
+        'color.branch':
+            value => 'auto';
+        'core.editor':
+            value => 'mvim -f';
+        'alias.lawg':
+            value => 'log --graph --pretty=format:\'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\' --abbrev-commit --date=relative';
+        'alias.unstage':
+            value => 'reset HEAD';
+        'alias.rollback':
+            value => 'checkout';
+        'alias.staged-diff':
+            value => 'diff --cached';
+    }
+
     package {
         'jq':
             provider => 'homebrew';
@@ -102,6 +131,7 @@ class people::mhan {
         '/Users/mhan/.bash_profile':
             ensure => present,
             source => 'puppet:///modules/people/mhan/my.bash_profile',
+            require => [File['/Users/mhan/.git-completion.bash'], File['/Users/mhan/.git-prompt.sh']];
     }
 
     file {
@@ -112,10 +142,5 @@ class people::mhan {
         '/Users/mhan/.git-prompt.sh':
             ensure => present,
             source => 'puppet:///modules/people/mhan/my.git-prompt.sh';
-        
-        '/Users/mhan/.gitconfig':
-            ensure => present,
-            source => 'puppet:///modules/people/mhan/my.gitconfig',
-            require => Class['git'];
     }
 }
