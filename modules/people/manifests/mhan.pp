@@ -64,6 +64,12 @@ class people::mhan {
             require => File['/Users/mhan/.vim/bundle'];
     }
 
+    exec { 'git clone nerdtree':
+            unless => 'test -d /Users/mhan/.vim/bundle/nerdtree',
+            command => 'git clone https://github.com/scrooloose/nerdtree.git /Users/mhan/.vim/bundle/nerdtree',
+            require => File['/Users/mhan/.vim/bundle'];
+    }
+
     file {
         '/Users/mhan/.vim/bundle':
             ensure => directory,

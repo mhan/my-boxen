@@ -17,3 +17,6 @@ set expandtab
 
 " Line numbers
 set number
+
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
